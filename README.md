@@ -1,2 +1,2 @@
 # YOTIE
-https://YOTEI.github.io/YOTIE/
+https://kunduahin45-jpg.github.io/YOTIE/
