@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YOTEI — Asian Fusion • Dhaka</title>
+  <meta name="description" content="YOTEI - Modern Asian small plates & dim sum.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">YO</div>
+      <div>
+        <h1>YOTEI</h1>
+        <div class="muted">Asian Fusion • Dhaka</div>
+      </div>
+    </div>
+
+    <nav class="primary">
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reserve">Reserve</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="actions">
+      <button class="btn secondary" onclick="scrollToSection('menu')">Order Online</button>
+      <button class="btn" onclick="scrollToSection('reserve')">Reserve a Table</button>
+      <button class="hamb" aria-label="Open menu" onclick="toggleMobile()">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h2>Welcome to <span style="color:var(--accent)">YOTEI</span></h2>
+      <p>Fresh dim sum, modern Asian small plates, and a vibrant atmosphere — Where every bite tells a story. </p>
+      <div class="hero-cta">
+        <a class="btn" href="#menu">View Menu</a>
+        <a class="btn secondary" href="#gallery">See Photos</a>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+        <div class="card small-info"><div style="font-weight:700">Open • 11:00 - 22:00</div></div>
+        <div class="card small-info"><div class="muted">Delivery • Available</div></div>
+      </div>
+    </div>
+
+    <aside class="hero-right card" id="reserve">
+      <div style="font-weight:700;margin-bottom:8px">Reserve a Table</div>
+      <form class="reserve" id="reserve-form" onsubmit="return handleReserve(event)">
+        <input type="text" id="r-name" placeholder="Your name" required />
+        <input type="tel" id="r-phone" placeholder="Phone number" required />
+        <select id="r-people" required>
+          <option value="1">1 person</option>
+          <option value="2">2 people</option>
+          <option value="3">3 people</option>
+          <option value="4">4 people</option>
+          <option value="5">5+ people</option>
+        </select>
+        <input type="datetime-local" id="r-date" required />
+        <button type="submit">Request Reservation</button>
+      </form>
+    </aside>
+  </section>
+
+  <div class="menu-strip container">
+    <button class="menu-cat active" data-cat="All" onclick="filterCategory('All')">All</button>
+    <button class="menu-cat" data-cat="Dim Sum" onclick="filterCategory('Dim Sum')">Dim Sum</button>
+    <button class="menu-cat" data-cat="Small Plates" onclick="filterCategory('Small Plates')">Small Plates</button>
+    <button class="menu-cat" data-cat="Rice & Noodles" onclick="filterCategory('Rice & Noodles')">Rice & Noodles</button>
+    <button class="menu-cat" data-cat="Dessert" onclick="filterCategory('Dessert')">Dessert</button>
+  </div>
+
+  <main class="container">
+    <section id="menu">
+      <h2>Our Menu</h2>
+      <p class="muted">Hand-picked favorites — updated seasonally.</p>
+      <div id="menu-grid" class="grid" style="margin-top:18px"></div>
+    </section>
+
+    <section id="gallery" style="margin-top:40px">
+      <h2>Gallery</h2>
+      <p class="muted">A peek inside YOTEI</p>
+      <div class="gallery" style="margin-top:14px">
+        <img src="https://i.pinimg.com/736x/1a/c3/11/1ac311e1d733b2baffdfcffc2a833a94.jpg" alt="gallery-1">
+        <img src="https://i.pinimg.com/736x/20/95/b5/2095b5f639bceddb8824cf52b24ce4f4.jpg" alt="gallery-2">
+        <img src="https://i.pinimg.com/736x/d1/b4/32/d1b432c50ef2dd2dbb81552122e51aa9.jpg" alt="gallery-3">
+      </div>
+    </section>
+
+    <section class="info-blocks" style="margin-top:40px">
+      <div class="info-card">
+        <h2>About YOTEI</h2>
+        <p>YOTEI brings a polished, modern take on classic Asian flavors — dim sum, bao, noodle bowls, and shareable plates. We craft each dish with fresh ingredients and mindful technique.</p>
+      </div>
+
+      <div class="info-card" id="contact">
+        <h2>Contact</h2>
+        <p class="muted">Questions? Catering inquiries? Reach out or send us a message.</p>
+        <div style="margin:12px 0" class="muted">📧 hello@yotei.bd • ☎️ +880 1750 000000</div>
+        <form class="contact-form" onsubmit="return handleContact(event)">
+          <input type="text" id="c-name" placeholder="Your name" required />
+          <input type="email" id="c-email" placeholder="Email" required />
+          <textarea id="c-message" rows="4" placeholder="Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:center;gap:12px;align-items:center"><strong>YOTEI</strong> • Asian Fusion — Dhaka</div>
+      <div style="margin-top:8px">© YOTEI 2025 • Designed for learning</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+/* YOTEI - Yum Cha District Clone */
+/* ------------------------------ */
+
+:root {
+  --accent: #e63946;
+  --dark: #1a1a1a;
+  --light: #f9f9f9;
+  --muted: #777;
+  --radius: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+header.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand .logo {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+}
+
+.brand h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+nav.primary {
+  display: flex;
+  gap: 28px;
+}
+
+nav.primary a {
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav.primary a:hover {
+  color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #c92c3a;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.secondary:hover {
+  background: var(--accent);
+  color: #ecdede;
+}
+
+.hamb {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #ffffff, #f0e8e8);
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-left h2 {
+  font-size: 48px;
+  margin-bottom: 18px;
+}
+
+.hero-left p {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.hero-cta {
+  margin-top: 24px;
+  display: flex;
+  gap: 14px;
+}
+.hero-right {
+  flex: 0.5;
+  min-width: 300px;
+  padding: 24px;
+  background: #fff; /* white background */
+  color: #000;      /* black text inside */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  border-radius: var(--radius);
+}
+
+/* Make all form inputs black text too */
+.hero-right input,
+.hero-right select,
+.hero-right button {
+  color: #000;
+}
+
+/* Optional: Make button background match YOTEI accent */
+.hero-right button {
+  background: var(--accent);
+  color: #fff;
+}
+
+
+
+.reserve input, 
+.reserve select,
+.reserve button,
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.reserve button,
+.contact-form button {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reserve button:hover,
+.contact-form button:hover {
+  background: #c92c3a;
+}
+
+.menu-strip {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.menu-cat {
+  background: transparent;
+  border: 2px solid var(--accent);
+  padding: 8px 20px;
+  margin: 4px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.menu-cat.active,
+.menu-cat:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 18px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.info-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.info-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.info-card h2 {
+  margin-bottom: 14px;
+}
+
+footer {
+  text-align: center;
+  background: #111;
+  color: #fff;
+  padding: 30px 0;
+  margin-top: 50px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav.primary {
+    display: none;
+  }
+
+  .hamb {
+    display: block;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left h2 {
+    font-size: 36px;
+  }
+}
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 40px;
+  flex-wrap: wrap;
+  color: #fff;
+
+  /* 🌄 Background image */
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+    url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=1600") center/cover no-repeat;
+  background-attachment: fixed;
+}
+/* Fix for small info cards on dark hero background */
+.small-info {
+  background: rgba(255, 255, 255, 0.1); /* slight transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  backdrop-filter: blur(4px); /* gives a premium frosted effect */
+}
+
+.small-info .muted {
+  color: #ddd;
+}
+.hero-left p {
+  font-size: 18px;
+  color: #ddd;
+}
